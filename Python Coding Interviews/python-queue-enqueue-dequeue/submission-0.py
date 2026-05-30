@@ -1,0 +1,31 @@
+from typing import List, Deque
+from collections import deque
+
+
+def rotate_list(arr: List[int], k: int) -> Deque[int]:
+
+    my_queue = deque(arr)
+
+    # increase each element's index by k.
+
+    queue_length = k
+
+    for i in range(queue_length):
+        my_queue.append(my_queue[0])
+        my_queue.popleft()
+
+
+    
+    return my_queue
+
+    # q_len is 4
+
+
+
+# do not modify below this line
+print(rotate_list([1, 2, 3, 4, 5], 0))
+print(rotate_list([1, 2, 3, 4, 5], 1))
+print(rotate_list([1, 2, 3, 4, 5], 2))
+print(rotate_list([1, 2, 3, 4, 5], 3))
+print(rotate_list([1, 2, 3, 4, 5], 4))
+print(rotate_list([1, 2, 3, 4, 5], 5))
